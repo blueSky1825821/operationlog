@@ -1,8 +1,25 @@
-- 操作日志
-- 使用注解及SpEL设置操作日志处理
+package com.beacon.operationlog.controller;
 
+import com.beacon.operationlog.service.IOperatorGetService;
+import com.beacon.operationlog.common.enums.LogCategoryType;
+import com.beacon.operationlog.start.annotation.LogRecordAnnotation;
+import com.beacon.operationlog.context.LogRecordContext;
+import com.beacon.operationlog.common.enums.LogType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-```java
+import javax.annotation.Resource;
+
+/**
+ * DESCRIPTION:
+ * <P>
+ * </p>
+ *
+ * @author wangmin
+ * @since 2022/6/21 21:03
+ */
 @RestController
 public class TestController {
     @Resource
@@ -28,8 +45,3 @@ public class TestController {
         return "hello:" + testParse;
     }
 }
-```
-
-
-- 参考 https://tech.meituan.com/2021/09/16/operational-logbook.html
-- https://github.com/miaoyinjun/jjche-boot/blob/ec14441ac5c022628aed25f4b57810ec721ba473/jjche-boot/jjche-boot-parent/jjche-boot-eladmin/jjche-boot-eladmin-system/src/main/java/org/jjche/system/modules/mnt/rest/DeployController.java
